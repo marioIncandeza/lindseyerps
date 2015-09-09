@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="hello">
+    <meta name="author" content="Lindsey">
+    <title>Project 0</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+    <link href="custom.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Lindsey Aaron Erps</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="index.html">Home</a></li>       
+            <li><a href="about.html">About</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
+              <ul class="dropdown-menu" id="linkload"></ul>
+            </li>            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Photos <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+             	<li><a href="texasShots.html">Texas</a></li>
+      
+              </ul>
+            </li> 
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+<div class="container">
+    
+    <div class="jumbotron text-center">
+          <h1><b>Project 0</b></h1>
+          <p>Starter project for EENG 3530</p>
+          
+        
+    </div>
+    
+
+
+   
+    <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe src="https://www.youtube.com/embed/PZXefO9bs-E" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+    </div>
+    <h1>Parts</h1>
+    <ul>
+        <li><a href="https://www.arduino.cc/documents/datasheets/LDR-VT90N2.pdf">Photocell</a></li>
+        <li><a href="http://www.farnell.com/datasheets/410427.pdf">NPN transistor</a></li>
+        <li>LED</li>
+        <li>220Ω resistor</li>
+        <li>10kΩ potentiometer</li>
+        <li>9V battery</li>
+    </ul>
+    <h1>Schematic</h1>
+    <img src="Thumbnails/P0.png" alt="Project 0" class="img-responsive" />
+    <h1>Overhead View</h1>
+    <img src="Thumbnails/p0.jpg" alt="Project 0" class="img-responsive" />
+    <p>This is a simple circuit I threw together which controls an LED. The potentiometer can be adjusted such that the transistor will switch the LED on/off. While the LED is on, an intense application of light to the face of the photoresistor causes the LED to dim. The resistance of the photoresistor decreases with increasing light intensity. When the LED is on, it is effectively in parallel with the potentiometer and photocell. As the resistance of the photocell decreases, the amount of current flowing through it increases, and consequently, the current must decrease through the LED causing the light to dim. Although I don't know much about the NPN transistor, my guess is that it serves primarily as a switch here, opening and closing based on the voltage applied at the base (B) terminal.</p>
+    
+    
+</div>
+
+
+           
+   <!------Footer!------->
+      <footer class="footer">
+      <div class="container">
+          
+          <p><em>Hello, World!</em></p>
+         <p>September 2015</p>
+         </div>
+      </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>$("#linkload").load("linkload.html");</script>
+
+</body>
+</html>
