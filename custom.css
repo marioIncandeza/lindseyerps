@@ -34,7 +34,7 @@ p {
 }
 
 .navbar-default {
-    background-color: dodgerblue;
+    background-color: darkolivegreen;
     border-color: azure;
     color: white;
 }
@@ -57,7 +57,7 @@ p {
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
     color:white;
-    background-color:navy;
+    background-color:olivedrab;
 }
 
 .navbar-default .navbar-nav > li > a:hover,
@@ -85,7 +85,7 @@ body {
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 120px;
-  background-color: dodgerblue;
+  background-color: darkolivegreen;
     color:white;
     font-family: 'Oswald' , sans-serif;
     padding-top: 20px;
