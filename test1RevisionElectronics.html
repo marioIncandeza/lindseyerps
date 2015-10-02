@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="hello">
     <meta name="author" content="Lindsey">
-    <title>The Knock Lock</title>
+    <title>Test 1</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="custom.css" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   </head>
   <body>
     <!-- Fixed navbar -->
@@ -44,43 +45,41 @@
     </div>
 <div class="container">
     
-      <div class="jumbotron text-center">
-          <h1><b>The Knock Lock</b></h1>
-          <p>It takes 3 knocks of the right intensity to open the lock.</p>
-          
-        
-        </div>
+    <div class="jumbotron text-center">
+          <h1><b>Op Amp DC Imperfections</b></h1>
+    </div>
+    
+    <p>An inverting amplifier uses an imperfect op amp and a 20 kΩ resistor(R1<sub>1</sub>) and a 2 MΩ resistor (R<sub>2</sub>). Due to the existence of an offset voltage: when the input is left open, V<sub>o</sub> is measured to be 9.6 V, and when the input is ground, V<sub>o</sub>is measured to be 9.1 V.</p>
+    <img class="img-responsive center-block" src="Pictures/opamptest.gif">
+    <p>Find the nominal closed loop gain.</p>
+    <p style="font-size: 24px;"> \[ A = -\frac{R_2}{R_1} = -\frac{2M}{20k} = -100 \]</p>
+    <p>Assume the input bias currents of the two input terminals are close and can be approximated as i<sub>B</sub>. Estimate i<sub>B</sub>.</p>
+    <p style="font-size: 24px;"> \[ \frac{9.6 - V_{os}}{2M} \] \[ \frac{9.1 - V_{os}}{2M} = i_B + \frac{V_{os}}{20k} \] 
+        \[ \frac{9.6 - V_{os}}{2M} + \frac{V_{os}}{20k} = \frac{9.1 - V_{os}}{2M} \] 
+        \[ 9.6 - V_{os} + 100V_{os} = 9.1 - V_{os} \]
+        \[ V_{os} = \frac{-0.5}{100} = -5 mV \]
+        \[ i_B = \frac{9.6 + .005}{2M} = 4.8 \mu A \]
+    </p>
+    <p>For clarification, the current is flowing from the output terminal to the inverting terminal and the ground (when grounded that is).</p>
     
 
-
-   
-        <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-8">
-    <div class="embed-responsive embed-responsive-16by9">
-          <iframe src="https://www.youtube.com/embed/uYIEUU28Q6w"></iframe>
-          </div>
-                </div>
-            <div class="col-md-2"></div>
-    </div>
-    </div>
-
+</div>
+      
 
            
    <!------Footer!------->
       <footer class="footer">
       <div class="container">
           
-          <p class="foot"><em>Opportunity does not knock, it presents itself when you beat down the door.</em></p>
-         <p>June 2015</p>
+          <p class="foot"><em>Mistakes are the portals of discovery.</em></p>
+         <p>September 2015</p>
          </div>
       </footer>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+   
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.2/gist-embed.min.js"></script>
 <script>$("#linkload").load("linkload.html");</script>
 <script>$("#headloader").load("healoader.html");</script>
 </body>
