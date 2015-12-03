@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head id="headloader">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="hello">
+    <meta name="author" content="Lindsey">
+    <title>Triangle LED Project Appendix</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="custom.css" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </head>
+  <body>
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Lindsey Aaron Erps</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="index.html">Home</a></li>       
+            <li><a href="about.html">About</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
+              <ul class="dropdown-menu" id="linkload"></ul>
+            </li>            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Photos <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+             	<li><a href="texasShots.html">Texas</a></li>
+      
+              </ul>
+            </li> 
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+<div class="container">
+    
+    <div class="jumbotron text-center">
+          <h1><b>Appendix</b></h1>
+    </div>
+    
+    <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe src="https://www.youtube.com/embed/iDJNaTHZ4sY" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        
+    </div>
+<p>The circuit with 3 LEDs per source and with a 1pF capacitor.</p>
+
+<div class="table-responsive">
+<table class="table" style="table-layout:fixed;">
+    <th colspan="2">Summary of BJT Current-Voltage Relationships in Active Mode</th>
+    <tr>
+        <td>\(I_C=I_Se^{\frac{V_{BE}}{V_T}}\)</td>
+        <td>\(I_B=\frac{I_C}{\beta}=\frac{I_S}{\beta}e^{\frac{V_{BE}}{V_T}}\)</td>
+        <td>\(I_E=\frac{I_C}{\alpha}=\frac{I_S}{\alpha}e^{\frac{v_{BE}}{V_T}}\)</td>
+    </tr>
+    <tr>
+        <td>\(I_C=\alpha I_E\)</td>
+        <td>\(I_C=\beta I_B\)</td>
+        <td>\(I_B=(1-\alpha)I_E=\frac{I_E}{\beta+1}\)</td>
+    </tr>
+    <tr>
+        <td>\(I_E=(\beta+1)I_B\)</td>
+    </tr>
+    <tr>
+        <td>\(\beta=\frac{\alpha}{1-\alpha}\)</td>
+    </tr>
+    <tr>
+        <td>\(\alpha=\frac{\beta}{\beta+1}\)</td>
+    </tr>
+</table>
+</div>
+    
+
+<img src="Pictures/Triangle_Scope-compressor.gif" class="img-responsive center-block">
+<p class="text-center"><b>Figure 1: </b>Oscilloscope output from the wave generator.</p>
+    
+<img src="Pictures/waveGenClose.jpg" class="img-responsive center-block">
+<p class="text-center"><b>Figure 2: </b>The actual wave generator circuit is on the breadboard on the right.</p>
+
+<img src="Pictures/bjtOverhead.jpg" class="img-responsive center-block">
+<p class="text-center"><b>Figure 3:</b> The BJT section.</p>
+</div>
+      
+
+           
+   <!------Footer!------->
+      <footer class="footer">
+      <div class="container">
+          
+          <p class="foot"><em>Will our life not be a tunnel between two vague clarities? Or will it not be a clarity between two dark triangles?</em></p>
+         <p>October 2015</p>
+         </div>
+      </footer>
+
+   
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.2/gist-embed.min.js"></script>
+<script>$("#linkload").load("linkload.html");</script>
+<script>$("#headloader").load("healoader.html");</script>
+<script type="text/javascript">
+    jQuery(function ($) {
+        $('.panel-heading span.clickable').on("click", function (e) {
+            if ($(this).hasClass('panel-collapsed')) {
+                // expand the panel
+                $(this).parents('.panel').find('.panel-body').slideDown();
+                $(this).removeClass('panel-collapsed');
+                $(this).find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+            }
+            else {
+                // collapse the panel
+                $(this).parents('.panel').find('.panel-body').slideUp();
+                $(this).addClass('panel-collapsed');
+                $(this).find('i').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

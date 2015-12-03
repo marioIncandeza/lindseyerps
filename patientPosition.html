@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head id="headloader">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="hello">
+    <meta name="author" content="Lindsey">
+    <title>Patient Position</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="custom.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Lindsey Aaron Erps</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="index.html">Home</a></li>       
+            <li><a href="about.html">About</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
+              <ul class="dropdown-menu" id="linkload"></ul>
+            </li>            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Photos <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+             	<li><a href="texasShots.html">Texas</a></li>
+      
+              </ul>
+            </li> 
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+<div class="container">
+    
+    <div class="jumbotron text-center">
+          <h1><b>Patient Position Monitor</b></h1>
+          <p>Final Project for EENG 3040</p>
+          
+        
+    </div>
+    
+    <h1>What it is and how it works</h1>
+    <p>In a hospital, patients often have to be repositioned in their beds so they don't get sores. To help nurses keep track of who needs to be flipped or turned, an accelerometer with a wifi module can be attached to patients which will transmit body position data. Based on the output of the accelerometer, the patient's position can be predicted, and nurses can be alerted if a patient has been in the same position for too long.</p>
+    <p>For our final project in EENG 3040 at East Carolina University, we've built a receiver module which wirelessly receives data and predicts body position. Data is transmitted and received serially with Xbee modules and processed using a PIC16F887 microcontroller. The PIC program is written in C and compiled with XC8 within MicroChip's MPLABX IDE.</p>
+    <p>The simulated data is transmitted in the form of the 10 bit analog to digital conversion results produced by the PIC16F887. That 10 bit data is broken into a high and low byte for transmission, and a checksum is also transmitted for error checking. To indicate the beginning of a transmission, 0xFFh is sent which serves as a cue to begin data storage for the receiver.</p>
+    <p>The receiver program is organized into 8 different functions: </p>
+    
+    <ul>
+    <li>sendCom</li>
+        <li>numLCD</li>
+        <li>charLCD</li>
+        <li>xdisplay</li>
+        <li>ydisplay</li>
+        <li>zdisplay</li>
+        <li>init</li>
+        <li>main</li>
+    </ul>
+    
+    <h3>sendCom</h3>
+    <p>Once the data is received and processed, the information is displayed on an LCD. sendCom is a simple function which is used to clock configuration instructions into the LCD. The 8 bit instruction must first be loaded into PortD, and then sendCom is called. sendCom uses RA1, RA2, and RA3 to communication with the LCD. This function is used primarily to initialize the LCD and to move the cursor position.</p>
+    <h3>numLCD</h3>
+    <p>numLCD prints one number at a time to the LCD. The number to be displayed is passed as an integer to the function, and that number is used as an index for an array of asci values which correspond to the characters 0-9. The asci value is loaded into PortD and then clocked in using the data bit sequence on PortA.</p>
+    <h3>charLCD</h3>
+    <p>charLCD does the same thing as numLCD, but the asci value for the character to be displayed is passed directly to the function as an argument.</p>
+    <h3>xdisplay</h3>
+    <p>xdisplay takes the double which corresponds to the x axis voltage of the accelerometer and displays it on the LCD to two decimal places. This function takes advantage of a C library function called <code>modf</code> which separates the whole from the fractional part of a double and places the two parts in separate variables without modifying the original double. Once the fractional part of the voltage has been isolated, a multiplier is used to shift the decimal to the right, and the value is cast as an integer. The digits of the shifted fractional value are then put into an array which can be iterated through and passed to numLCD to be displayed. A simpler approach could have been taken, but this method makes it easy to modify the displayed precision.</p>
+    
+    <h1>Code</h1>
+    <script src="https://gist.github.com/marioIncandeza/c0447b1da5b5387a2b03.js"></script>
+
+</div>
+      
+
+           
+   <!------Footer!------->
+      <footer class="footer">
+      <div class="container">
+          
+          <p class="foot">
+         <p>December 2015</p>
+         </div>
+      </footer>
+
+   
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.2/gist-embed.min.js"></script>
+<script>$("#linkload").load("linkload.html");</script>
+<script>$("#headloader").load("healoader.html");</script>
+</body>
+</html>

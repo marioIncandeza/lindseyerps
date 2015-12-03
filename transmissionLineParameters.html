@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head id="headloader">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="hello">
+    <meta name="author" content="Lindsey">
+    <title>Transmission Line Parameters</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="custom.css" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </head>
+  <body>
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Lindsey Aaron Erps</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="index.html">Home</a></li>       
+            <li><a href="about.html">About</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
+              <ul class="dropdown-menu" id="linkload"></ul>
+            </li>            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Photos <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+             	<li><a href="texasShots.html">Texas</a></li>
+      
+              </ul>
+            </li> 
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+<div class="container">
+    
+    <div class="jumbotron text-center">
+          <h1><b>Transmission Line Parameters</b></h1>
+          <p>An abbreviated treatment</p>
+          
+    </div>
+
+<h1>Conductors</h1>
+<p>Aluminum has replaced copper as the most common conductor for overhead transmission. One of the most common conductor types is aluminum conductor, steel reinforced (ACSR), which consists of layers of aluminum strands surrounding a central core of steel strands.</p>
+    
+<p>EHV lines often have more than one conductor per phase; these conductors are called a <em>bundle</em>. Bundle conductors have a lower electric field strength at the conductor surfaces, thereby controlling corona. They also have a smaller series reactance.</p>
+    
+<p>Electrical design dictates the type, size, and number of bundle conductors per phase. Phase conductors are selected to have sufficient thermal capacity to meet current ratings. For EHV lines, the number of bundle conductors per phase is selected to control the voltage gradient at conductor surfaces, thereby reducing or eliminating corona.</p>
+    
+<p>Conductor spacings, types, and sizes also determine the series impedance and shunt admittance. Series impedance affects line-voltage drops, I<sup>2</sup>R losses, and stability limits. Shunt admittance, primarily capacitive, affects line-charging currents, which inject reactive power into the power system. Shunt reactors are often installed on lightly loaded EHV lines to absorb part of this reactive power, thereby reducing overvoltages.</p>
+    
+<h1>Resistance</h1>
+<p>The dc resistance of a conductor at a specified temperature T is
+    \[ R_{dc}=\frac{p_Tl}{A}Ω \]
+    where p<sub>T</sub> = conductor resistivity at temperature T
+</p>
+<p>l = conductor length</p>
+<p>A = conductor cross-sectional area</p>
+    
+<p>In English units, which are stupid, conductor cross-sectional area is expressed in circular mils. One inch equals 1000 mils, and 1 cmil equals \(\pi / 4 \) sq mil.</p>
+    
+<p>The area of a circle in cmils with diameter D inches is found by first converting the diameter to mils (d) and then squaring that diameter. \[ A = d^2 cmil\]</p>
+    
+<p>Conductor resistance depends on the following factors:</p>
+    <ol>
+        <li>Spiraling</li>
+        <li>Temperature</li>
+        <li>Frequency (skin effect)</li>
+        <li>Current magnitude</li>
+        
+    </ol>
+    
+<p>Spiraling makes the strands 1 or 2% longer than the actual conductor length. Thus, the dc resistance of a stranded conductor is 1 or 2% larger than the calculated resistance.</p>
+    
+<p>Resistivity varies linearly over normal operating temperatures according to
+    \[ p_{T2} = p_{T1}\left(\frac{T_2 + T}{T_1 + T}\right) \] 
+    At 20&deg; C, the resistivity of hard drawn aluminum is 17.00 Ω-cmil/ft or 2.83 Ωm x 10<sup>-8</sup>. The temperature constant, T, at the same temp is 228.1.
+    \[ p_{T2} = 17\left(\frac{T_2 + 228.1}{20 + 228.1}\right) \] 
+    \[ 1mi = 5280ft \]
+    \[ 1km = 0.621371 \]
+    The ac resistance of a conductor is
+    \[ R_{ac} = \frac{P_{loss}}{I_{rms}^2} \]
+</p>
+    
+<h1>Inductance</h1>
+    
+<h3>Two wire line and three phase three wire line w/ equal spacing</h3>
+    
+<p> \[ \lambda _x = 2\times 10^{-7} \times I \times ln\left(\frac{D}{0.7788r_x}\right) Wb-t/m \]
+    The inductance of conductor x is then
+    \[ L_x = 2 \times 10^{-7} \times ln \left(\frac{D}{0.7788r_x}\right) \text{H/m per conductor} \]
+    Remember that there are two lines with a single phase. The currents in the conductors are going opposite directions.
+</p>
+    
+<p>The total inductance of the single phase circuit, also called loop inductance, is
+    \[ L = L_x + L_y = 2 \times 10^{-7}\left(ln\frac{D}{r_x'} + ln\frac{D}{r_y'} \right) = 4 \times 10^{-7}\times ln \frac{D}{0.7788r} \text{H/m per circuit} \]
+    D = distance between the two lines
+</p>
+    
+<p>For a three phase three wire line with equal spacing between them
+    \[ L = 2 \times 10^{-7} \times ln \frac{D}{0.7788r} \text{H/m per phase} \]
+</p>
+    
+<h3>Composite conductors</h3>
+    
+<p>It is seldom necessary to calculate GMR or GMD for standard lines. The GMR of standard conductors is provided by conductor manufacturers. See tables A.3 and A.4 in the Appendix.</p>
+    
+    <h4><b>Inductance and inductive reactance: single-phase line</b></h4>
+    
+<p>A single-phase line operating at 60 Hz consists of two 4/0 12-strand copper conductors with 5 ft spacing between conductor centers. The line length is 20 miles. Determne the total inductance in H and the total inductive reactance in Ω.</p>
+    
+<p>The GMD between conductor centers is \(D_{xy}=5ft\). Also, from Table <b>A.3</b>, the GMR of a 4/0 12-strand copper conductor is \(D_{xx}=D_{yy}=0.01750ft \).
+    \[ L_x = L_y = 2 \times 10^{-7} \times ln \left (\frac{5}{0.01750} \right) \frac{H}{m} \times 1609 \frac{m}{mi} \times 20mi \]
+    \[ = 0.03639 \text{H per conductor} \]
+</p>
+<p>The total inductance is
+    \[ L = L_x + L_y = 2 \times 0.03639 = 0.07279 \text{H per circuit} \]
+    The total inductive reactance is
+    \[ X_L = 2\pi f L = 27.44 \text{Ω per circuit} \]
+</p>
+    
+<h3>Balanced three phase operation of a completely transposed line</h3>
+    
+    <p>If the spacings between phases are unequal, balance can be restored by exchanging the conductor positions along the line, a technique called transposition.
+    \[ D_{eq} = \sqrt[3]{D_{12}D_{23}D_{31}} \]
+        \[ L_a = 2 \times 10^{-7} ln \frac{D_{eq}}{D_s} H/m \]
+        \[ D_s \text{ is the conductor GMR for stranded conductors, or r' for solid conductors} \]
+    </p>
+<h4><b>Inductance and inductive reactance: three phase line</b></h4>
+    <p>A completely transposed 60 Hz three phase line has flat horizontal phase spacing with 10 m between adjacent conductors. The conductors are 1,590,000 cmil ACSR with 54/3 stranding. Line length is 200 km. Determine the inductance in H and the inductive reactance in Ω.</p>
+    
+    <p>From Table <b>A.4</b>, the GMR of a 1,590,000 cmil 54/3 ACSR conductor is
+    \[ D_s = 0.0520ft \frac{1m}{3.28ft} = 0.0159 m \]
+        \[ D_{eq} = \sqrt[3]{10\times 10 \times 20} = 12.6 m \]
+        \[ L_a = 2 \times 10^{-7} \times ln \left( \frac{12.6}{0.0159} \right ) \frac{H}{m} \times \frac{1000m}{km} \times 200km \]
+        \[ = 0.267 H \]
+        The inductive reactance of phase a is
+        \[ X_a = 2\pi f L_a = 101 Ω \]
+    </p>
+    
+<h3>Bundled Conductors</h3>
+    <p>It is common practice for EHV lines to use more than one conductor per phase, a practice called bundling. Bundling reduces the electric field strength at the conductor surfaces, which in turn reduces or eliminates corona and its results: undesirable power loss, communications interference, and audible noise. Bundling also reduce the series reactance of the line by increasing the GMR of the bundle.</p>
+    <p>Two conductor bundle:
+    \[ D_{SL} = \sqrt[4]{(D_s \times d)^2} = \sqrt{D_s d} \]
+        Three conductor bundle:
+        \[ D_{SL} = \sqrt[9]{(D_s \times d \times d)^3} = \sqrt[3]{D_s d^2} \]
+        Four conductor bundle:
+        \[ D_{SL} = 1.091\sqrt[4]{D_s d^3} \]
+        The inductance is then
+        \[ L_a = 2 \times 10^{-7} ln \frac{D_{eq}}{D_{SL}} \text{ H/m} \]
+    </p>
+    
+<h4><b>Inductive reactance: three phase line with bundled conductors</b></h4>
+    <p>A completely transposed 60 Hz three phase line has flat horizontal spacing with 10 m between adjacent conductors. Each phase consists of two 795,000 cmil ACSR 26/2 condcutors. Bundle spacing is 0.40 m. Calculate the inductive reactance of the line.</p>
+    <p>From Table <b>A.4</b>, the GMR of a 795,000 cmil 26/2 ACSR conductor is
+    \[ D_S = 0.0375ft \times \frac{1m}{3.28ft} = 0.0114m \]
+        \[ D_{SL} = \sqrt{(0.0114)(0.40)} = 0.0676m \]
+        \[ D_{eq} = \sqrt[3]{(10)(10)(20)} = 12.6m \]
+        \[ L_a = 2 \times 10^{-7} ln \left(\frac{12.6}{0.0676} \right) (1000)(200) = 0.209 H \]
+        \[ X_a = 2 \pi f L_a = 78.8 Ω \]
+    </p>
+    
+<h1>Capacitance</h1>
+    <h4>Single phase two wire line</h4>
+    <p>For a 1-meter line length, the capacitance between conductors is
+    \[ C_{xy} = \frac{\pi \epsilon_0}{ln(D/r)} \text{F/m line to line} \]
+    </p>
+    <p>If the two wire line is supplied by a transformer with a grounded center tap, then the capacitance from either line to the grounded neutral is
+    \[ C_n = \frac{2\pi \epsilon_0}{ln(D/r)} \text{ F/m line to neutral} \]
+        Epsilon zero is, \( \mathbf{\epsilon_0 = 8.854 \times 10^{-12}} \) F/m 
+    </p>
+    <h4>Three phase line with equal phase spacing</h4>
+    <p>The capacitance to neutral per line length is
+    \[ C_{an} = \frac{q_a}{V_{an}} = \frac{2 \pi \epsilon_0}{ln(D/r)} \text{ F/m line to neutral} \]
+    </p>
+    <h3>Unequal phase spacing and bundled conductors</h3>
+    <p>For three phase lines with unequal spacing, the lines have to be transposed to balance the voltages and the equation for capacitance becomes
+    \[ C_{an} = \frac{2\pi\epsilon_0}{ln(D_{eq}/r)} \text{ F/m} \]
+        \[ D_{eq} = \sqrt[3]{D_{ab}D_{bc}D{ac}} \]
+    </p>
+    <h4>For bundled conductors</h4>
+    <p>
+    \[ C_{an} = \frac{2\pi\epsilon_0}{ln(D_{eq}/D_{SC})} F/m \]
+        \[ D_{SC} = \sqrt{rd} \text{ for a two conductor bundle} \]
+        \[ D_{SC} = \sqrt[3]{rd^2} \text{ for a three conductor bundle} \]
+        \[ D_{SC} = \sqrt[4]{rd^3} \text{ for a four conductor bundle} \]
+    </p>
+    <p>The current supplied to the transmission line capacitance is called charging current. For a single phase circuit 
+    \[ I_{chg}=j\omega C_{xy}V_{xy}\text{ A} \]
+        The reactive power delivered by the line to line capacitance is
+        \[ Q_C = \omega C_{xy}V_{xy}^2 \text{ var} \]
+        For a completely transposed three phase line that has balanced positive sequence voltages
+        \[ I_{chg} = j\omega C_{an} V_{LN} \text{ A} \]
+        \[ Q_{C1\phi} = \omega C_{an} V_{LN}^2 \text{ var} \]
+        The total reactive power supplied by the three phase line is
+        \[ Q_{C3\phi} = 3 \omega C_{an} V_{LN}^2 = \omega C_{an} V_{LL}^2 \text{ var} \]
+    </p>
+    
+<h4><b>Capacitance, admittance, and reactive power supplied for a single phase line</b></h4>
+    <p>A single phase line operating with 60 Hz consists of two 4/0 12 strand copper conductors with 5 ft spacing between conductor centers. The line length is 20 miles. Determine the line to line capacitance in F and the line to line admittance in S. If the line voltage is 20 kV, determine the reactive power in kvar supplied by this capacitance.</p>
+    <p>From Table <b>A.3</b>, the <em>outside radius</em> of a 4/0 12 strand copper conductor is
+    \[ r = \frac{0.552}{2}in \times \frac{1ft}{12in} = 0.023 ft\]
+        \[ C_{xy} = \frac{\pi\epsilon_0}{ln(\frac{5}{0.023})} = 5.169 \times 10^{-12} F/m \]
+        or
+        \[ C_{xy}=5.169 \times 10^{-12} \frac{F}{m} \times 1609 \frac{m}{mi}\times 20 mi = 1.66 \times 10^{-7} F \]
+        and the shunt admittance is
+        \[ Y_{xy} = j \omega C_{xy} = j6.27 \times 10^{-5} \text{ S line to line} \]
+        \[ Q_C = (6.27 \times 10^{-5})(20 \times 10^3)^2 = 25.1 \text{ kvar} \]
+    </p>
+    
+<h4><b>Capacitance, shunt admittance, charging current and reactive power for a three phase line</b></h4>
+    <p>For a completely transposed, three phase, bundled line with two 795,000 cmil ACSR 26/2 conductors with bundle spacing of 0.40 m and horizontal phase spacing of 10 m between phases, determine the capacitance to neutral in F and the shunt admittance to neutral in S. If the line voltage is 345 kV, determine the charging current in kA per phase and the total reactive power in Mvar supplied by the line capacitance. Assume balanced positive sequence voltages. The line is 200 km long.</p>
+    <p>From Table <b>A.4</b>, the <em>outside radius</em> of a 795,000 cmil 26/2 ACSR conductor is
+    \[ r = \frac{1.108}{2}in \times 0.0254\frac{m}{in} = 0.0141 m \]
+        The equivalent radius of a two conductor bundle is
+        \[ D_{SC} = \sqrt{rd} = \sqrt{(0.0141)(0.40)} = 0.0750 m \]
+        \[ D_{eq} = \sqrt[3]{(10)(10)(20)} = 12.6 m \]
+        \[ C_{an} = \frac{2\pi\epsilon_0}{ln\frac{12.6}{0.0750}}\frac{F}{m} \times 1000 \frac{m}{km} \times 200 km\]
+        \[ = 2.17 \times 10^{-6} F \]
+        The shunt admittance to neutral is
+        \[ Y_{an} = j\omega C_{an} = j8.19 \times 10^{-4} S \]
+        The charging current is
+        \[ I_{chg} = j\omega C_{an}V_{LN} = Y V_{an} = 8.19 \times 10^{-4} \frac{345}{\sqrt{3}} = 0.163 kA/phase \]
+        The total reactive power supplied is
+        \[ Q_{C3\phi} = \omega C_{an} V_{LL}^2 = 8.19 \times 10^{-4} 345^2 = 97.5 Mvar \]
+        
+    </p>
+    
+    
+
+</div>
+      
+
+           
+   <!------Footer!------->
+      <footer class="footer">
+      <div class="container">
+          
+          <p class="foot"><em>We are here to help each other get through this thing, whatever it is.</em></p>
+         <p>November 2015</p>
+         </div>
+      </footer>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.2/gist-embed.min.js"></script>
+<script>$("#linkload").load("linkload.html");</script>
+<script>$("#headloader").load("healoader.html");</script>
+</body>
+</html>

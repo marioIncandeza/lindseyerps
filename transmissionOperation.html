@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head id="headloader">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="hello">
+    <meta name="author" content="Lindsey">
+    <title>Transmission Line Operation</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="custom.css" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </head>
+  <body>
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Lindsey Aaron Erps</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="index.html">Home</a></li>       
+            <li><a href="about.html">About</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
+              <ul class="dropdown-menu" id="linkload"></ul>
+            </li>            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Photos <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+             	<li><a href="texasShots.html">Texas</a></li>
+      
+              </ul>
+            </li> 
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+<div class="container">
+    
+    <div class="jumbotron text-center">
+          <h1><b>Transmission Line Operation</b></h1>
+          <p>An abbreviated treatment</p>
+          
+    </div>
+
+<p>The relationship between the sending-end and receiving-end quantities
+    \[ V_S = AV_R + BI_R \text{ volts} \]
+    \[ I_S = CV_R + DI_R \text{ A} \]
+    where A, B, C, and D are parameters that depend on the line parameters. The voltages in these equations represent the <em>line to neutral</em> voltages in a three phase system.
+    </p>
+<p>ABCD parameters can be used to describe the variation of line voltage with line loading. Voltage regulation is the change in voltage at the receiving end of the line when the load varies from no load to a specified full load at a specified power factor, while the sending end voltage is held constant.
+    \[ \text{percent VR} = \frac{V_{RNL}-V_{RFL}}{V_{RFL}} \times 100 \]
+    \[ V_{RNL} = \frac{V_S}{A} \]
+    </p>
+    
+<h1>Medium line nominal \(\pi\) &mdash; 80 to 250 km</h1>
+    
+    <h3 style="text-align: center"><b>A = D</b></h3>
+    <p>\[ 1 + \frac{YZ}{2} \text{ per unit}\]</p>
+    <h3 style="text-align: center"><b>B</b></h3>
+    <p style="text-align: center">Z Ω</p>
+    <h3 style="text-align: center"><b>C</b></h3>
+    <p>\[ Y \left( 1 + \frac{YZ}{4} \right )S \]</p>
+    
+    <h4><b>Example</b></h4>
+    <p>A three phase, 60 Hz, completely transposed 345 kV, 200 km line has two 795,000 cmil 26/2 ACSR conductors per bundle and the following positive sequence line constants:
+    \[ z = 0.032 + j0.35 Ω/km \]
+        \[ y = j4.2 \times 10^{-6} S/km \]
+        Full load at the receiving end of the line is 700 MW at 0.99 pf leading and at 95% of rated voltage. Assuming a medium length line, determine the ABCD parameters, the percent voltage regulation, etc.
+    </p>
+    
+    <p>The total series impedance and shunt admittance values are
+    \[ Z = zl = z \times 200 = 70.29\angle84.78^\circ Ω\]
+        \[ Y = yl = y \times 200 = 8.4 \times 10^{-4} \angle 90^\circ S \]
+        \[ A = D = 1 + \frac{YZ}{2} = 0.9706\angle 0.159^\circ \text{ per unit} \]
+        \[ B = Z = 70.29 \angle 84.78^\circ Ω \]
+        \[ C = Y \left ( 1 + \frac{YZ}{4} \right ) = 8.277 \times 10^{-4} \angle 90.08^\circ S \]
+        The receiving end voltage is 95% of the rated voltage of 345 kV.
+        \[ V_R = 0.95 \times 345 = 327.8 kV_{LL} \]
+        \[ V_R = \frac{327.8}{\sqrt{3}}\angle 0^\circ = 189.2 \angle 0^\circ kV_{LN} \]
+        The voltage angle has been set to 0&deg; for convenience. Since the pf in this case is leading, the current angle will just be made positive&mdash;ELI the ICEman. Also remember that for 3 phase systems \( P = \sqrt{3}V_{LL}I_L cos\theta \).
+        \[ I_R = \frac{P}{\sqrt{3}V_{LL}cos\theta} = \frac{700}{\sqrt{3}\times 327.8\times 0.99} \angle cos^{-1}0.99 = 1.246 \angle 8.11^\circ \text{ kA} \]
+        Now, we can compute the sending end voltage and current. Remember to use the <b>line to neutral</b> voltage.
+        \[ V_S = AV_R + BI_R = 199.6\angle 26.14^\circ kV_{LN} \]
+        You put line to neutral in so you get line to neutral out.
+        \[ V_S = 199.6 \times \sqrt{3} = 345.8 kV_{LL} \]
+        which is slightly more than the rated voltage of the line. There is a higher voltage at the sending end to compensate for the voltage drop of the line.
+        \[ I_S = CV_R + DI_R = 1.241\angle 15.5^\circ kA \]
+        and so the real power at the sending end is
+        \[ P_S = \sqrt{3} \times V_{LL} \times I_R \times cos(\theta_V - \theta_I) = 730.5 MW \]
+        So about 30.5 MW of real power has been lost in the line. According to the trusty internet, an average home (whatever that is) uses about 1 kW of power. So that means that 30 MW lost in the line is enough power for 30,000 homes. That number is probably way too high, but even if you cut it in half, it's still significant.
+        \[ V_{RNL} = \frac{V_S}{A} = \frac{345.8}{0.9706} = 356.3 kV_{LL} \]
+        \[ \text{percent VR} = \frac{V_{RNL} - V_R }{V_R} \times 100 = \frac{356.3 - 327.8}{327.8} \times 100 = 8.7 \text{% *use line to line value for }V_R \]
+        Apparently Table <b>A.4</b> also provides information about the current carrying capacity of the conductors. In this case, we've got a bundle of two per phase of 795,000 cmil 26/2 ACSR which has an individual current limit of 0.9 kA. Since we've got two conductors per phase, multiply by two to get 1.8 kA, which is more than the current we calculated on either end. So I guess the line won't blow up or melt or whatever it does.
+    </p>
+    <p>The transmission line efficiency at full load is
+    \[ \text{percent EFF} = \frac{P_R}{P_S} \times 100 = \frac{700}{730} \times 100 = 95.8\text{%} \]
+        That's considered to be about the lowest efficiency possible to not have problems.
+    </p>
+    
+    <h1>Exact ABCD Parameters</h1>
+    
+    <h5>
+    \[ A = D = cosh(\gamma l) \text{ per unit} \]
+        \[ B = Z_c sinh(\gamma l) \:Ω \]
+        \[ C = \frac{1}{Z_c} sinh(\gamma l)\: S \]
+        \[ \gamma = \sqrt{zy} \]
+        \[ Z_c = \sqrt{\frac{z}{y}} \]
+    </h5>
+    
+    <p>Now that begs the question, just how exactly do you take the square root of a complex number? Glover fails to mention this little detail because he's a bastard.
+    \[ \sqrt{a + bj} = \sqrt{r} \left ( cos\frac{\theta}{2} + jsin \frac{\theta}{2} \right ) \]
+        Alright, now for how to calculate cosh and sinh using only a stick and duct tape,
+        \[ cosh(\gamma l) = \frac{1}{2}(e^{al}\angle (bl)^\circ + e^{-al}\angle (-bl)^\circ) \]
+        \[ sinh(\gamma l) = \frac{1}{2}(e^{al}\angle (bl)^\circ - e^{-al}\angle (-bl)^\circ) \]
+        So from there, you should be able to bang out those parameters. Now, Glover says that these exact parameters are valid for any line length. But then, he says that for accurate calculations, these equations must be used for overhead 60 Hz lines <em>longer</em> than 250 km. So which is it? Can they be used for lines shorter than 250 km or not? What kind of mind games are you playing here?
+    </p>
+
+    <h1>Equivalent \(\pi\) Circuit</h1>
+    <p>So as if things weren't confusing enough, we're also going to try to represent the terminal characteristics of a transmission line by an equivalent circuit instead of its ABCD parameters. So I guess what that means is that we're gunna try to find the series impedance and shunt admittance using the information that the exact parameters give us. Then you plug those new circuit parameters into a \( \pi\) circuit that looks more like a square than a pie and solve for sending and receiving voltage and current.
+    \[ Z' = Z_c sinh(\gamma l) = ZF_1 = Z \frac{sinh(\gamma l)}{\gamma l} \]
+        \[ \frac{Y'}{2} = \frac{tanh(\gamma l /2)}{Z_c} = \frac{Y}{2}F_2 = \frac{Y}{2} \frac{tanh(\gamma l/2)}{(\gamma l/2)} \]
+        which is just horrible. There doesn't appear to be any easy way to calculate tanh(z), so it's \( \frac{cosh(z)}{sinh(z)} \). Fun...
+    </p>
+</div>
+      
+
+           
+   <!------Footer!------->
+      <footer class="footer">
+      <div class="container">
+          
+          <p class="foot"><em>...and so who are you, after all? &mdash;I am part of the power which forever wills evil and forever works good.</em></p>
+         <p>November 2015</p>
+         </div>
+      </footer>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.2/gist-embed.min.js"></script>
+<script>$("#linkload").load("linkload.html");</script>
+<script>$("#headloader").load("healoader.html");</script>
+</body>
+</html>

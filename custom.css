@@ -1,16 +1,32 @@
+.panel-heading span {
+    margin-top: -20px;
+    
+}
+
+.clickable {
+    cursor: pointer;
+}    
+
 body {
 padding-top: 50px;
 padding-bottom: 100px;
-background-color: #F5F4F0;
+/*background-color: #F5F4F0;*/
+}
+
+.calculations {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .navbar-default .navbar-nav .open .dropdown-menu>li>a, .navbar-default .navbar-nav .open .dropdown-menu {
-    background-color: olivedrab;
+    background-color: darkgrey;
     color:#ffffff;
   }
 
 .dropdown-header{
-    color:darkorange;
+    color:red;
     font-weight: bold;
 }
 
@@ -22,11 +38,11 @@ background-color: #F5F4F0;
 }
 
 .donkey {
-    background-image: url("Pictures/smokeymountain.jpg");
+    background-image: url("Pictures/whitePower.jpg");
     max-width: 100%;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    color: white;
+    background-repeat:no-repeat;
+    background-size: cover;
+    color: black;
     margin-top: 0;
 }
 
@@ -63,11 +79,12 @@ p {
 }
 
 .navbar-default {
-    background-color: darkolivegreen;
+    background-color:rgba(211,211,211,0.9);
     border-color: azure;
     color: white;
     font-family: 'Lato', sans-serif;
     font-weight: 300;
+    
 }
 
 .navbar-default .navbar-brand {
@@ -88,7 +105,7 @@ p {
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
     color:white;
-    background-color:olivedrab;
+    background-color:black;
 }
 
 .navbar-default .navbar-nav > li > a:hover,
@@ -116,8 +133,8 @@ body {
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 120px;
-  background-color: darkolivegreen;
+  height: 150px;
+  background-color: crimson;
     color:white;
     font-family: 'Old+Standard+TT' , sans-serif;
     font-size: 16px;
